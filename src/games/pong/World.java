@@ -9,8 +9,6 @@ import org.newdawn.slick.Font;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
-import org.newdawn.slick.SlickException;
-import org.newdawn.slick.opengl.EmptyImageData;
 import org.newdawn.slick.state.StateBasedGame;
 
 import app.AppFont;
@@ -30,8 +28,7 @@ import games.pong.bonuses.PlayerSpeedUp;
 
 public class World extends AppWorld {
 
-	public static final String DIRECTORY = "pong" + java.io.File.separator;
-	public static final String IMAGES = "images" + java.io.File.separator + World.DIRECTORY;
+	public static final String IMAGES = "/images/pong/";
 
 	public static final Random RNG = new Random ();
 
@@ -56,11 +53,7 @@ public class World extends AppWorld {
 	public static /* final */ int [] BACKGROUND_SIZE;
 
 	static {
-		try {
-			World.BACKGROUND_IMAGE = new Image (IMAGES + "backgroundDuck.png");
-		} catch (SlickException exception) {
-			World.BACKGROUND_IMAGE = new Image (new EmptyImageData (0, 0));
-		}
+		World.BACKGROUND_IMAGE = AppLoader.loadPicture (IMAGES + "backgroundDuck.png");
 		World.BACKGROUND_SIZE = new int [] {
 			World.BACKGROUND_IMAGE.getWidth (),
 			World.BACKGROUND_IMAGE.getHeight ()

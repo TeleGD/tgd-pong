@@ -1,2 +1,2 @@
 - Amos George (@AmosGeorge)
-- Tristan Le Godais (@TrisTOON)
+- Tristan Le Godais (@PolariTOON)
